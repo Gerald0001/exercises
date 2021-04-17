@@ -1,0 +1,35 @@
+﻿@model User
+@if (!string.IsNullOrEmpty(TempData["ErrorMessage"] as string))
+{
+    <div class="alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@{
+    Layout = null;
+}
+
+<head>
+    <link href="~/css/Login.css" rel="stylesheet" />
+</head>
+
+<div class="formDiv">
+    <h1 class="title">Sign In</h1>
+    <form asp-action="Login" method="post">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" asp-for="UserName">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password"asp-for="Password">
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+        <a asp-action="Create">">Sign Up</a>
+    </form>
+</div>
+
+<script src="https://kit.fontawesome.com/4077c6ef6a.js" crossorigin="anonymous"></script>
+
+

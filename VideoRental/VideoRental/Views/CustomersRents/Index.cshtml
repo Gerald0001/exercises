@@ -1,0 +1,28 @@
+﻿@model List<CustomerRent>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <td>CustomerId</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>MovieId</td>
+            <td>Title</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var rental in Model)
+    {
+        <tr>
+            <td>@rental.CustomerId</td>
+            <td>@rental.Customer.FirstName</td>
+            <td>@rental.Customer.LastName</td>
+            <td>@rental.MovieId</td>
+            <td>@rental.Movie.Title.</td>
+            <td><a asp-action="Edit" asp-route-id="@rental.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@rental.Id">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

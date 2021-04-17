@@ -1,0 +1,47 @@
+﻿@model List<Room>
+
+
+
+<section id="apartment-dashboard">
+    <ul>
+        <li><a asp-controller="Rooms" asp-action="Index" ></a></li><li>
+    </ul>
+    <h3 id="page-description">Apartments List</h3>
+    
+</section>
+
+<form id="filter-form" method="get">
+    <fieldset>
+        <legend>Filter by</legend>
+        <label for="RoomNo">RoomNo</label>
+        <input name="roomNo" type="text" placeholder="">
+        <button type="submit"><i>Search</i></button>
+    </fieldset>
+</form>
+<table class="table table-dark">
+    
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>RoomNo</td>
+            <td>RoomFloor</td>
+            <td>Room Type</td>
+        </tr>
+    </thead>
+
+    @foreach (var room in Model)
+    {
+        <tr>
+            <td>@room.Id</td>
+            <td>@room.RoomNo</td>
+            <td>@room.RoomFloor</td>
+            <td>@room.RoomType</td>
+            <td><a asp-action="Edit" asp-route-id="@room.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@room.Id">Delete</a></td>
+
+        </tr>
+
+    }
+</table>
+
+<a asp-action="Create" class="btn btn-success">Add New Room</a>

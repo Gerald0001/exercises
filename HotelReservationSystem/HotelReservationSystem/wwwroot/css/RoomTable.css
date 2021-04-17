@@ -1,0 +1,149 @@
+﻿* {
+    font-family: Open Sans;
+    margin: 0;
+}
+
+#apartment-dashboard {
+    width: 80%;
+    margin: 20px 10%;
+}
+
+    #apartment-dashboard table {
+        border-collapse: collapse;
+    }
+
+        #apartment-dashboard table, #apartment-dashboard table th, #apartment-dashboard table td {
+            border: 1px solid #bfbfbf;
+        }
+
+            #apartment-dashboard table th, #apartment-dashboard table td {
+                padding: 8px;
+            }
+
+            #apartment-dashboard table th {
+                background-color: rgba(102, 204, 255, 0.7);
+            }
+
+            #apartment-dashboard table tr:nth-child(even) {
+                background-color: rgba(102, 204, 255, 0.1);
+            }
+
+            #apartment-dashboard table tr:hover {
+                background-color: rgba(102, 204, 255, 0.5);
+            }
+
+.apartment-cell {
+    width: 250px;
+}
+
+.owner-cell {
+    width: 200px;
+}
+
+.address-cell {
+    width: 450px;
+}
+
+.added-cell {
+    width: 150px;
+}
+
+.status-cell {
+    width: 150px;
+}
+
+.action-cell {
+    width: 200px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    width: calc(100% / 3);
+}
+
+    li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+        border: 1px solid black;
+        border-color: #bfbfbf;
+    }
+
+#apartment-dashboard ul li {
+    background-color: rgba(102, 204, 255, 0.4)
+}
+
+li a:hover {
+    background-color: rgba(102, 204, 255, 0.9);
+}
+
+#apartment-dashboard #page-description {
+    margin: 25px 0 25px 15px;
+}
+
+#apartment-dashboard #filter-form {
+    margin: 0 0 10px 0;
+}
+
+    #apartment-dashboard #filter-form fieldset {
+        border-radius: 10px;
+    }
+
+        #apartment-dashboard #filter-form fieldset legend {
+            background-color: rgba(102, 204, 255, 0.7);
+            border-radius: 8px;
+            padding: 2px 5px;
+        }
+
+#apartment-dashboard input, #apartment-dashboard button,
+#apartment-dashboard select {
+    outline: none;
+    border: solid 1px #bfbfbf;
+    border-radius: 10px;
+    background-color: rgba(102, 204, 255, 0.1);
+}
+
+#apartment-dashboard #filter-form button {
+    background-color: rgba(102, 204, 255, 0.3);
+}
+
+.left-float {
+    float: left;
+}
+
+.center-float {
+    float: center;
+}
+
+.right-float {
+    float: right;
+}
+
+#pagination {
+    padding: 20px 0;
+}
+
+    #pagination .button {
+        padding: 5px 0;
+        text-align: center;
+        width: 125px;
+        text-decoration: none;
+        color: white;
+        background-color: rgba(102, 204, 255, 1);
+        border: 1px solid #bfbfbf;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+
+    #pagination p {
+        display: inline-block;
+    }

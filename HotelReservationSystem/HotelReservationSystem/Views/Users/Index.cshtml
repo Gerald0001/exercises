@@ -1,0 +1,33 @@
+﻿@model List<User>
+@if (!string.IsNullOrEmpty(TempData["ErrorMessage"] as string))
+{
+    <div class="alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<table class="table table-dark">
+
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>UserName</td>
+        <td>Password</td>
+      
+    </tr>
+    </thead>
+    @foreach (var user in Model)
+    {
+        <tr>
+
+            <td>@user.UserName</td>
+            <td>@user.Password</td>
+            <td><a asp-action="Edit" asp-route-id="@user.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@user.Id">Delete</a></td>
+
+        </tr>
+    }
+</table>
+
+<a asp-action="Create" class="btn btn-success">Add New User</a>
+

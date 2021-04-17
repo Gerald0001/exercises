@@ -1,0 +1,65 @@
+﻿@using VideoRental.Controllers
+@model List<Movie>
+<!-- SEARCH FORM -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row mb-5">
+            <div class="col-sm-12">
+                <form asp-action="Search" class="form-inline">
+                    <div class="input-group input-group-sm">
+                        <input name="title" class="form-control form-control-navbar" type="search" placeholder="Search by title" aria-label="Search">
+                        <input name="category" class="form-control form-control-navbar" type="search" placeholder="Search by category" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-dark">
+                    <thead>
+
+
+                    <tr>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Category</td>
+                        <td>Price</td>
+                        <td>IsAvailable</td>
+                        <td>Edit</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var movie in Model)
+                    {
+                        <tr>
+                            <td>@movie.Id</td>
+                            <td>@movie.Title</td>
+                            <td>@movie.Category</td>
+                            <td>@movie.Price</td>
+                            <td>
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown button
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="Yes">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </td>
+                            <td><a asp-action="Edit" asp-route-id="@movie.Id">Edit</a></td>
+                            <td><a asp-action="Delete" asp-route-id="@movie.Id">Delete</a></td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a asp-action="Create" class="btn btn-success">Add new Movie</a>
+    </div>
+</div>
